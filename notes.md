@@ -290,24 +290,25 @@ We don't need to use these functions as it's hard to maintain if our state is bi
 > **Note (5)**
 There are warnings with these hooks, if connect() and mapStateToProp and mapDispatchtoProps are fine, then go with them.
 
-> **Note (5)**
+> **Note (6)**
 We could pass data in the dispatch functions in the component and play with it in our reducers after extracting it from the action.payload object. So don't forget to recieve these data in the action creator either you did mapDispatchToProps function or used useDispatch() selector
 
-> **Note (6)**
+> **Note (7)**
 mapStateToProps and mapDispatchToProps may take second argument (ownProps).
 we can make use of this as follows: we have list of users, and we want get a specific user on clicking on it, we can use this ownProps arg in passing the user ID and fetch his data based on this ID (pass the id as prop to the UserComponent).
 
 
 
-> **Note (6)**
+> **Note (8)**
 install redux-devtools-extension package for debugging react-redux apps
 
-> **Note (6)**
+> **Note (9)**
 if we have a case that we don't use mapStateToProps, we pass null as 1st
 parameter in connect() method
 
-> **Note (6)**
-There is no fixed folder arcitecture for  mangaging states in redux (do whatever suits your app needs). But, I prefer this archtecture 
+> **Note (10)**
+There is no fixed folder arcitecture for  mangaging states in redux (do whatever suits your app needs). But, I prefer this archtecture
+<pre>
 src/components
 src/components/Cake
 src/components/User
@@ -321,6 +322,5 @@ src/redux/User
 src/redux/User/actions.js
 src/redux/User/reducers.js
 src/redux/User/actionTypes.js
-
-
 src/data/store.js
+</pre>
